@@ -27,7 +27,6 @@ class AddToDoItemViewController: UIViewController {
     @IBOutlet weak var orangeButton: UIButton!
     @IBOutlet weak var greyButton: UIButton!
     @IBOutlet weak var greenButton: UIButton!
-    var buttonSelected: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()

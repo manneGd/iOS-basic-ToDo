@@ -70,13 +70,13 @@ class ToDoListTableViewController: UITableViewController {
         
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
     
     // Override to support editing the table view.
@@ -87,10 +87,8 @@ class ToDoListTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }  
+        }
     }
- 
-
     
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -108,14 +106,18 @@ class ToDoListTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
-
+/*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
-
+        if (segue.identifier == "editItem") {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let controller = segue.destination as! EditToDoItemViewController
+                controller.oldToDoName = toDoItems[indexPath.row].itemName
+            }
+        }
+    }*/
 }
